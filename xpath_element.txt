@@ -1,0 +1,7 @@
+元素说明，定位表达式
+百度首页输入框://input[@id="kw"]
+百度一下按钮：//input[contains(@class,"btn")]
+搜索结果中课堂派链接：//div[@id="1"]/h3
+课堂派首页进入课堂按钮：//span[contains(text(),"课堂")]
+课堂派课程py自动化第24期：//dl[contains(@class,"ktdl1")]//strong
+py自动化第24期作业按钮：//div[@id="third-nav"]/a[contains(text(),"作业")]
