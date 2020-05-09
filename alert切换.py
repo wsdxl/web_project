@@ -13,7 +13,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 driver=webdriver.Chrome()
 driver.implicitly_wait(30)
-driver.get(r'F:\web_project\switch_iframe.html')
+driver.get(r'file:///Users/mac/web_project/switch_iframe.html')
 driver.find_element_by_id('hello').click()
 
 #切换到alert弹框对象

@@ -6,16 +6,16 @@ E-mail  : 506615839@qq.com
 File    : test1.py
 ============================
 """
-import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-driver = webdriver.Chrome()
-driver.get('http://www.baidu.com')
-# time.sleep(2)
-driver.implicitly_wait(30)
+# import time
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+#
+# driver = webdriver.Chrome()
+# driver.get('http://www.baidu.com')
+# # time.sleep(2)
+# driver.implicitly_wait(30)
 
 
 # #第一步：初始化等待器
@@ -48,17 +48,26 @@ driver.implicitly_wait(30)
 
 # 自己封装一个显示等待的方法
 # 偷懒的方法,弄懂显示等待的原理
-def wait_element(driver, timeout, poll_frequency, locator):
-    used_time = 0
-    while used_time < timeout:
-        try:
-            e = driver.find_element(*locator)
-            return e
-        except:
-            time.sleep(poll_frequency)
-            used_time += poll_frequency
-    # 超时了
-    raise TimeoutError('元素定位超时')
+# def wait_element(driver, timeout, poll_frequency, locator):
+#     used_time = 0
+#     while used_time < timeout:
+#         try:
+#             e = driver.find_element(*locator)
+#             return e
+#         except:
+#             time.sleep(poll_frequency)
+#             used_time += poll_frequency
+#     # 超时了
+#     raise TimeoutError('元素定位超时')
+#
+# e=wait_element(driver,30,0.2,('id','kw'))
+# e.send_keys('柠檬班')
+import random
+f=open("num.txt","w")
+list1=[]
+for i in range(10):
+    num=random.randint(0,1000)
+    list1.append(str(num))
 
-e=wait_element(driver,30,0.2,('id','kw'))
-e.send_keys('柠檬班')
+f.write(",".join(list1))
+f.close()
